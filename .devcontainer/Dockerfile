@@ -1,6 +1,12 @@
 # For details, see https://github.com/devcontainers/images/tree/main/src/ruby
 FROM mcr.microsoft.com/devcontainers/ruby:1-3.2-bullseye
 
+# Install Extism
+RUN curl -L https://github.com/extism/cli/releases/download/v0.3.1/extism-v0.3.1-linux-amd64.tar.gz --output extism.tar.gz
+RUN tar -xvf extism.tar.gz
+RUN mv extism /usr/local/bin
+RUN su vscode -c "extism lib install latest"
+
 # Install Rails
 # RUN gem install rails webdrivers
 
