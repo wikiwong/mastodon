@@ -24,3 +24,9 @@ RAILS_ENV=development ./bin/rails assets:precompile
 
 # Precompile assets for test
 RAILS_ENV=test NODE_ENV=tests ./bin/rails assets:precompile
+
+# Install Extism
+curl -L https://github.com/extism/cli/releases/download/v0.3.1/extism-v0.3.1-linux-amd64.tar.gz --output extism.tar.gz
+tar -xvf extism.tar.gz
+mv extism /usr/local/bin
+extism lib install latest
